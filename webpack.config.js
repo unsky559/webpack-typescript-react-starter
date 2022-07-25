@@ -27,7 +27,6 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           "style-loader",
-          "css-loader",
           "sass-loader"
         ]
       },
@@ -43,7 +42,6 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     open: true,
     port: 2000,
