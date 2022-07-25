@@ -4,13 +4,13 @@ const ESLint = require('eslint-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,6 +29,11 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
+          'css-modules-typescript-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: true },
+          },
           'sass-loader',
         ],
       },
