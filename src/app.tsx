@@ -1,5 +1,5 @@
 import * as React from 'react';
-import TestWelcomeComponent from './assets/componetns/test-welcome-component/component';
+import TestWelcomeComponent from './componetns/test-welcome-component/component';
 
 const App = () => (
     <div>
